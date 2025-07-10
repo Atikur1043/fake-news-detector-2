@@ -5,8 +5,8 @@ import torch
 app = Flask(__name__)
 
 # Use this working model instead
-model_name = "distilbert-base-uncased-finetuned-sst-2-english"
-classifier = pipeline("text-classification", model=model_name, device=-1)
+model_name = "digitalepidemiologylab/covid-twitter-bert-v2"
+classifier = pipeline("text-classification", model=model_name)
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -20,7 +20,8 @@ def predict():
         result = classifier(text)[0]
         prediction = "fake" if result['label'] == "NEGATIVE" else "real"
         confidence = result['score']
-        
+        if confidence < 0.7:
+            prediction = "uncertain"
         return jsonify({
             "prediction": prediction,
             "confidence": confidence,

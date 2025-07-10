@@ -5,7 +5,7 @@ const cors = require('cors');
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 const bodyParser = require('body-parser');
-
+const errorHandler = require('./middleware/errorHandler');
 const app = express();
 
 // Security middleware
@@ -33,7 +33,7 @@ app.get('/', (req, res) => {
 // API routes
 app.use('/api/analyze', require('./routes/analyze'));
 app.use('/api/feedback', require('./routes/feedback'));
-
+app.use(errorHandler);
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`🚀 Server running on http://localhost:${PORT}`);
