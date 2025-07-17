@@ -16,13 +16,15 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const signup = async (username, password) => {
-    const { data } = await axios.post('http://localhost:8000/api/auth/signup', { username, password });
+    // FIX: Use relative path for API call
+    const { data } = await axios.post('/api/auth/signup', { username, password });
     localStorage.setItem('userInfo', JSON.stringify(data));
     setUser(data);
   };
 
   const login = async (username, password) => {
-    const { data } = await axios.post('http://localhost:8000/api/auth/login', { username, password });
+    // FIX: Use relative path for API call
+    const { data } = await axios.post('/api/auth/login', { username, password });
     localStorage.setItem('userInfo', JSON.stringify(data));
     setUser(data);
   };
@@ -32,7 +34,6 @@ export const AuthProvider = ({ children }) => {
     setUser(null);
   };
 
-  // --- NEW: Function to delete the user's account ---
   const deleteAccount = async () => {
     if (!user || !user.token) {
       throw new Error('Not authenticated');
@@ -42,8 +43,8 @@ export const AuthProvider = ({ children }) => {
         Authorization: `Bearer ${user.token}`,
       },
     };
-    await axios.delete('http://localhost:8000/api/auth/profile', config);
-    // After successful deletion, log the user out
+    // FIX: Use relative path for API call
+    await axios.delete('/api/auth/profile', config);
     logout();
   };
 

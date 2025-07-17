@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import FeedbackButton from './FeedbackButton';
-import AuthContext from '../context/AuthContext'; // Import AuthContext
+import AuthContext from '../context/AuthContext';
 
 export default function NewsInputForm({ onAnalysis, analysis }) {
   const [text, setText] = useState('');
@@ -11,7 +11,7 @@ export default function NewsInputForm({ onAnalysis, analysis }) {
   const [error, setError] = useState(null);
   const [feedbackSent, setFeedbackSent] = useState(false);
   
-  const { user } = useContext(AuthContext); // Get user from context
+  const { user } = useContext(AuthContext);
 
   useEffect(() => {
     if (analysis) {
@@ -54,7 +54,8 @@ export default function NewsInputForm({ onAnalysis, analysis }) {
     resetState();
     try {
       const config = getAuthConfig();
-      const response = await axios.post('http://localhost:8000/api/analyze', { text }, config);
+      // FIX: Use relative path for API call
+      const response = await axios.post('/api/analyze', { text }, config);
       handleApiResponse(response);
     } catch (err) {
       setError('Failed to analyze text. Please try again.');
@@ -69,7 +70,8 @@ export default function NewsInputForm({ onAnalysis, analysis }) {
     resetState();
     try {
       const config = getAuthConfig();
-      const response = await axios.post('http://localhost:8000/api/analyze-url', { url }, config);
+      // FIX: Use relative path for API call
+      const response = await axios.post('/api/analyze-url', { url }, config);
       handleApiResponse(response);
     } catch (err) {
       const errorMessage = err.response?.data?.error || 'Failed to analyze URL. Please check the URL and try again.';
@@ -84,7 +86,8 @@ export default function NewsInputForm({ onAnalysis, analysis }) {
     if (!result || !result._id) return;
     try {
       const config = getAuthConfig();
-      await axios.post('http://localhost:8000/api/feedback', {
+      // FIX: Use relative path for API call
+      await axios.post('/api/feedback', {
         analysisId: result._id,
         isCorrect: false,
       }, config);

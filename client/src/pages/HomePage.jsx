@@ -8,21 +8,21 @@ export default function HomePage() {
   const [history, setHistory] = useState([]);
   const [selectedAnalysis, setSelectedAnalysis] = useState(null);
   const [isLoadingHistory, setIsLoadingHistory] = useState(true);
-  const { user } = useContext(AuthContext); // Get user from context
+  const { user } = useContext(AuthContext);
 
   useEffect(() => {
     const fetchHistory = async () => {
-      if (!user) return; // Don't fetch if no user
+      if (!user) return;
 
       try {
         setIsLoadingHistory(true);
-        // Set up headers for the authenticated request
         const config = {
           headers: {
             Authorization: `Bearer ${user.token}`,
           },
         };
-        const { data } = await axios.get('http://localhost:8000/api/history', config);
+        // FIX: Use relative path for API call
+        const { data } = await axios.get('/api/history', config);
         setHistory(data);
       } catch (error) {
         console.error('Failed to fetch history:', error);
@@ -32,7 +32,7 @@ export default function HomePage() {
     };
 
     fetchHistory();
-  }, [user]); // Re-run effect if the user changes
+  }, [user]);
 
   const handleNewAnalysis = (newAnalysis) => {
     setHistory([newAnalysis, ...history]);
