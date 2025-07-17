@@ -1,8 +1,10 @@
+const connectDB = require('../config/db');
 const { predictFakeNews } = require('../services/modelService');
 const Analysis = require('../models/Analysis');
 const logger = require('../utils/logger');
 
 const analyzeText = async (req, res, next) => {
+  await connectDB();
   try {
     const { text } = req.body;
     if (!text) {

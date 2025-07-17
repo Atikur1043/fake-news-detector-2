@@ -1,3 +1,4 @@
+const connectDB = require('../config/db');
 const axios = require('axios');
 const cheerio = require('cheerio');
 const { predictFakeNews } = require('../services/modelService');
@@ -5,6 +6,7 @@ const Analysis = require('../models/Analysis');
 const logger = require('../utils/logger');
 
 const analyzeUrl = async (req, res, next) => {
+  await connectDB();
   try {
     const { url } = req.body;
     if (!url) {

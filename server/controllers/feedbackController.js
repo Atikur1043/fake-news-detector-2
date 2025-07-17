@@ -1,8 +1,10 @@
+const connectDB = require('../config/db');
 const Feedback = require('../models/Feedback');
 const Analysis = require('../models/Analysis');
 const logger = require('../utils/logger');
 
 const submitFeedback = async (req, res, next) => {
+  await connectDB();
   try {
     const { analysisId, isCorrect } = req.body;
 

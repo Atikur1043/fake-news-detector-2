@@ -1,3 +1,4 @@
+const connectDB = require('../config/db');
 const User = require('../models/User');
 const Analysis = require('../models/Analysis'); // Import Analysis model
 const Feedback = require('../models/Feedback'); // Import Feedback model
@@ -11,6 +12,7 @@ const generateToken = (id) => {
 };
 
 const signupUser = async (req, res, next) => {
+  await connectDB();
   const { username, password } = req.body;
   try {
     const userExists = await User.findOne({ username: username.toLowerCase() });
