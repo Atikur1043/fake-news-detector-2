@@ -1,52 +1,43 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-from transformers import pipeline
-import torch
+import joblib
 import os
 
 app = Flask(__name__)
 CORS(app)
 
-# --- Load Model with Authentication from Environment Variable ---
-# This is much more secure. We will set this variable in Render's dashboard.
-HF_AUTH_TOKEN = os.environ.get('HF_TOKEN')
-
-if not HF_AUTH_TOKEN:
-    print("❌ Error: HF_TOKEN environment variable not set.")
-    exit()
-
-model_name = "unitary/unbiased-fake-news-detection-model"
-device = 0 if torch.cuda.is_available() else -1
-
+# --- Load Locally Trained Model ---
 try:
-    classifier = pipeline(
-        "text-classification",
-        model=model_name,
-        device=device,
-        token=HF_AUTH_TOKEN
-    )
-    print("✅ Model loaded successfully using authentication token.")
+    model = joblib.load('model.joblib')
+    vectorizer = joblib.load('vectorizer.joblib')
+    print("✅ Model and vectorizer loaded successfully.")
 except Exception as e:
-    print(f"❌ Failed to load model. Error: {e}")
+    print(f"❌ Error loading model: {e}")
     exit()
 
 @app.route('/api/model/predict', methods=['POST'])
 def predict():
-    # ... (the rest of your predict function remains the same)
     try:
         data = request.get_json()
         text = data.get('text', '')
         
         if not text or not isinstance(text, str) or len(text.strip()) == 0:
-            return jsonify({"error": "Text input is required and must be a non-empty string."}), 400
+            return jsonify({"error": "Text input is required."}), 400
             
-        result = classifier(text)[0]
+        vectorized_text = vectorizer.transform([text])
+        prediction_proba = model.predict_proba(vectorized_text)[0]
         
-        prediction = result['label'].lower()
-        confidence = result['score']
-        
-        if confidence < 0.75:
-            prediction = "uncertain"
+        if model.classes_[0] == 'FAKE':
+            fake_proba, real_proba = prediction_proba[0], prediction_proba[1]
+        else:
+            real_proba, fake_proba = prediction_proba[0], prediction_proba[1]
+
+        if fake_proba > real_proba:
+            prediction = 'fake'
+            confidence = float(fake_proba)
+        else:
+            prediction = 'real'
+            confidence = float(real_proba)
             
         return jsonify({
             "prediction": prediction,
@@ -57,7 +48,5 @@ def predict():
         print(f"An error occurred during prediction: {e}")
         return jsonify({"error": "An internal server error occurred."}), 500
 
-# Note: The if __name__ == '__main__': block is not used by Gunicorn,
-# but it's good practice to keep it for local testing.
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
