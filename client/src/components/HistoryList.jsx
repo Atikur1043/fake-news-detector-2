@@ -1,3 +1,4 @@
+import React from 'react';
 
 export default function HistoryList({ history, onSelect, isLoading }) {
   if (isLoading) {
@@ -9,10 +10,14 @@ export default function HistoryList({ history, onSelect, isLoading }) {
     );
   }
 
+  // FIX: Check if history is an array before trying to map over it.
+  // This prevents the "t.map is not a function" crash.
+  const hasHistory = Array.isArray(history) && history.length > 0;
+
   return (
     <div className="mt-8">
       <h2 className="text-lg dark:text-gray-300 font-bold mb-2">Analysis History</h2>
-      {history.length === 0 ? (
+      {!hasHistory ? (
         <p className="text-gray-500 dark:text-gray-400">No previous analyses yet.</p>
       ) : (
         <ul className="space-y-2 max-h-96 overflow-y-auto pr-2">
@@ -26,7 +31,6 @@ export default function HistoryList({ history, onSelect, isLoading }) {
                 <span className={`font-bold ${item.prediction === 'fake' ? 'text-red-600 dark:text-red-400' : 'text-green-600 dark:text-green-400'}`}>
                   {item.prediction.charAt(0).toUpperCase() + item.prediction.slice(1)}
                 </span>
-                {/* Format the date for better readability */}
                 <span className="text-xs text-gray-500 dark:text-gray-400">
                   {new Date(item.createdAt).toLocaleDateString()}
                 </span>
