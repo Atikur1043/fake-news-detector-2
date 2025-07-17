@@ -17,7 +17,7 @@ export const AuthProvider = ({ children }) => {
 
   const signup = async (username, password) => {
     // FIX: Use relative path for API call
-    const { data } = await axios.post('/api/auth/signup', { username, password });
+    const { data } = await axios.get('/api/auth/signup', { username, password });
     localStorage.setItem('userInfo', JSON.stringify(data));
     setUser(data);
   };
