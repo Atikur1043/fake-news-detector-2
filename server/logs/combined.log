@@ -169,3 +169,6 @@
 {"level":"info","message":"Server running on port 8000","timestamp":"2025-07-17T19:00:45.394Z"}
 {"level":"info","message":"Server running on port 8000","timestamp":"2025-07-17T19:01:32.158Z"}
 {"level":"info","message":"Server running on port 8000","timestamp":"2025-07-17T19:01:46.793Z"}
+{"level":"info","message":"New MongoDB connection established.","timestamp":"2025-07-17T19:14:44.456Z"}
+{"level":"info","message":"New MongoDB connection established.","timestamp":"2025-07-17T19:15:06.328Z"}
+{"level":"info","message":"New MongoDB connection established.","timestamp":"2025-07-17T19:15:22.314Z"}

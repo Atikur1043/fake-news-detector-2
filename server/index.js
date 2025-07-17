@@ -1,11 +1,13 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
+const mongoose = require('mongoose');
 const errorHandler = require('./middleware/errorHandler');
 const logger = require('./utils/logger');
+const connectDB = require('./config/db');
 
-// NOTE: We no longer connect to the DB here directly.
-// Each request will ensure a connection is available via the controller.
+// Ensure the database is connected when the function is invoked
+connectDB();
 
 const app = express();
 
@@ -22,9 +24,8 @@ app.use('/api/history', require('./routes/history'));
 // Centralized Error Handler
 app.use(errorHandler);
 
-const PORT = process.env.PORT || 8000;
-
-app.listen(PORT, () => logger.info(`Server running on port ${PORT}`));
+// FIX: Remove the app.listen() block.
+// Vercel handles the server listening part automatically.
 
 // Export the app for Vercel's serverless environment
 module.exports = app;
