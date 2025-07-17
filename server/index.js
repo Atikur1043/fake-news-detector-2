@@ -28,4 +28,5 @@ app.use(errorHandler);
 // Vercel handles the server listening part automatically.
 
 // Export the app for Vercel's serverless environment
-module.exports = app;
+const serverless = require('serverless-http');
+module.exports = serverless(app);
