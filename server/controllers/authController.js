@@ -12,6 +12,7 @@ const generateToken = (id) => {
 };
 
 const signupUser = async (req, res, next) => {
+  logger.info('POST /api/auth/signup hit');
   await connectDB();
   const { username, password } = req.body;
   try {
