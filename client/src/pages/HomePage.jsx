@@ -1,40 +1,66 @@
-import { useState } from 'react';
+import { useState, useEffect, useContext } from 'react';
+import axios from 'axios';
 import NewsInputForm from '../components/NewsInputForm';
 import HistoryList from '../components/HistoryList';
+import AuthContext from '../context/AuthContext';
 
 export default function HomePage() {
   const [history, setHistory] = useState([]);
-  const [selectedIdx, setSelectedIdx] = useState(null);
+  const [selectedAnalysis, setSelectedAnalysis] = useState(null);
+  const [isLoadingHistory, setIsLoadingHistory] = useState(true);
+  const { user } = useContext(AuthContext); // Get user from context
 
-  const handleAnalysis = (analysis) => {
-    const entry = {
-      ...analysis,
-      text: analysis.text,
-      date: new Date().toLocaleString()
+  useEffect(() => {
+    const fetchHistory = async () => {
+      if (!user) return; // Don't fetch if no user
+
+      try {
+        setIsLoadingHistory(true);
+        // Set up headers for the authenticated request
+        const config = {
+          headers: {
+            Authorization: `Bearer ${user.token}`,
+          },
+        };
+        const { data } = await axios.get('http://localhost:8000/api/history', config);
+        setHistory(data);
+      } catch (error) {
+        console.error('Failed to fetch history:', error);
+      } finally {
+        setIsLoadingHistory(false);
+      }
     };
-    setHistory([entry, ...history]);
-    setSelectedIdx(0);
+
+    fetchHistory();
+  }, [user]); // Re-run effect if the user changes
+
+  const handleNewAnalysis = (newAnalysis) => {
+    setHistory([newAnalysis, ...history]);
+    setSelectedAnalysis(newAnalysis);
   };
 
-  const handleSelectHistory = (idx) => {
-    setSelectedIdx(idx);
+  const handleSelectHistory = (analysisItem) => {
+    setSelectedAnalysis(analysisItem);
   };
 
   return (
-    // This is the content that was previously in App.js
-    <div className="py-12 transition">
+    <div className="py-12 transition"> 
       <h1 className="text-4xl font-extrabold text-center mb-8 text-blue-700 dark:text-blue-300 drop-shadow-sm tracking-tight">
         Prometheus <span className="text-xl font-semibold text-gray-700 dark:text-gray-300">- AI Fake News Detector</span>
       </h1>
       <div className="flex flex-col lg:flex-row gap-8 max-w-5xl mx-auto px-4">
         <div className="flex-1">
-          <NewsInputForm
-            onAnalysis={handleAnalysis}
-            analysis={selectedIdx !== null ? history[selectedIdx] : null}
+          <NewsInputForm 
+            onAnalysis={handleNewAnalysis}
+            analysis={selectedAnalysis}
           />
         </div>
         <div className="w-full lg:w-1/3">
-          <HistoryList history={history} onSelect={handleSelectHistory} />
+          <HistoryList 
+            history={history} 
+            onSelect={handleSelectHistory}
+            isLoading={isLoadingHistory}
+          />
         </div>
       </div>
     </div>

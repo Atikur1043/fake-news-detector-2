@@ -1,13 +1,18 @@
 import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import HomePage from './pages/HomePage';
-import AboutPage from './pages/AboutPage';
+import HomePage from './pages/HomePage.jsx';
+import AboutPage from './pages/AboutPage.jsx';
+import LoginPage from './pages/LoginPage.jsx';
+import SignupPage from './pages/SignupPage.jsx';
+import PrivateRoute from './components/PrivateRoute.jsx';
+// We no longer need to import useContext here as 'user' is not used.
 
 function App() {
-  // Dark mode state and logic remain here as the top-level component
+  // The unused 'user' variable has been removed.
   const [darkMode, setDarkMode] = useState(() => {
-    return localStorage.getItem('theme') === 'dark';
+    const theme = localStorage.getItem('theme');
+    return theme === 'dark';
   });
 
   useEffect(() => {
@@ -16,13 +21,20 @@ function App() {
   }, [darkMode]);
 
   return (
-    // This div provides the background color for all pages
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900">
       <Navbar darkMode={darkMode} onToggle={() => setDarkMode(!darkMode)} />
-      <main className="pt-16"> {/* Padding to push content below the fixed navbar */}
+      <main className="pt-16">
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          {/* Public Routes */}
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/signup" element={<SignupPage />} />
           <Route path="/about" element={<AboutPage />} />
+
+          {/* Protected Routes */}
+          <Route element={<PrivateRoute />}>
+            <Route path="/" element={<HomePage />} />
+            {/* You can add other private routes here in the future */}
+          </Route>
         </Routes>
       </main>
     </div>

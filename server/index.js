@@ -1,40 +1,40 @@
 require('dotenv').config();
 const express = require('express');
-const mongoose = require('mongoose');
 const cors = require('cors');
-const helmet = require('helmet');
-const rateLimit = require('express-rate-limit');
-const bodyParser = require('body-parser');
-const errorHandler = require('./middleware/errorHandler');
+const mongoose = require('mongoose');
+// FIX: Corrected the path to the errorHandler middleware
+const errorHandler = require('./middleware/errorHandler'); 
+// FIX: Corrected the path to the logger utility
+const logger = require('./utils/logger'); 
+
+// Connect to Database
+const connectDB = async () => {
+  try {
+    await mongoose.connect(process.env.MONGO_URI);
+    logger.info('MongoDB Connected...');
+  } catch (err) {
+    logger.error('MongoDB connection error:', err.message);
+    process.exit(1);
+  }
+};
+connectDB();
+
 const app = express();
 
-// Security middleware
-app.use(helmet());
+// Middleware
 app.use(cors());
-app.use(bodyParser.json());
+app.use(express.json());
 
-// Rate limiting (100 requests per 15 minutes)
-const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 100
-});
-app.use(limiter);
-
-// MongoDB connection
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/fake-news-detector')
-  .then(() => console.log('✅ MongoDB connected'))
-  .catch(err => console.error('❌ MongoDB connection error:', err));
-
-// Test route
-app.get('/', (req, res) => {
-  res.send('Fake News Detector API');
-});
-
-// API routes
+// API Routes
+app.use('/api/auth', require('./routes/auth'));
 app.use('/api/analyze', require('./routes/analyze'));
+app.use('/api/analyze-url', require('./routes/analyzeUrl'));
 app.use('/api/feedback', require('./routes/feedback'));
+app.use('/api/history', require('./routes/history'));
+
+// Centralized Error Handler
 app.use(errorHandler);
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`🚀 Server running on http://localhost:${PORT}`);
-});
+
+const PORT = process.env.PORT || 8000;
+
+app.listen(PORT, () => logger.info(`Server running on port ${PORT}`));

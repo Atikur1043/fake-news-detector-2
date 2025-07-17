@@ -1,23 +1,27 @@
 const axios = require('axios');
-const logger = require('../utils/logger'); // Optional for logging
+const logger = require('../utils/logger');
+
+const MODEL_API_URL = process.env.MODEL_API_URL || 'http://localhost:5000/api/model/predict';
 
 const predictFakeNews = async (text) => {
   try {
-    const response = await axios.post(
-      'http://localhost:5001/predict', // Python API endpoint
-      { text },
-      { timeout: 5000 } // 5-second timeout
-    );
-    
-    return {
-      prediction: response.data.prediction,
-      confidence: response.data.confidence,
-      explanation: response.data.explanation || "No explanation provided"
-    };
+    logger.info(`Sending text to model API at ${MODEL_API_URL}`);
+    const response = await axios.post(MODEL_API_URL, { text });
 
+    if (response.status !== 200 || !response.data) {
+      throw new Error('Invalid response from model service');
+    }
+    
+    logger.info('Received prediction from model API');
+    return response.data;
   } catch (error) {
-    logger.error('Model API error:', error.message);
-    throw new Error(`Model service failed: ${error.response?.data?.error || error.message}`);
+    if (error.response) {
+      logger.error(`Model API error: ${error.response.status} ${error.response.statusText}`, error.response.data);
+    } else {
+      logger.error('Model API connection error:', error.message);
+    }
+    
+    throw new Error('Model service failed'); 
   }
 };
 

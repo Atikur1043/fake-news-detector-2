@@ -1,0 +1,159 @@
+{"level":"error","message":"Model API error:","timestamp":"2025-07-17T08:15:19.032Z"}
+{"level":"error","message":"Model API error:","timestamp":"2025-07-17T08:15:21.013Z"}
+{"level":"error","message":"Model API error:","timestamp":"2025-07-17T08:15:26.249Z"}
+{"level":"error","message":"Model API error:","timestamp":"2025-07-17T08:15:27.241Z"}
+{"level":"info","message":"Sending text to model API at http://localhost:5000/api/model/predict","timestamp":"2025-07-17T08:25:29.980Z"}
+{"level":"error","message":"Model API error: 404 Not Found","timestamp":"2025-07-17T08:25:30.008Z"}
+{"level":"info","message":"Sending text to model API at http://localhost:5000/api/model/predict","timestamp":"2025-07-17T08:25:30.752Z"}
+{"level":"error","message":"Model API error: 404 Not Found","timestamp":"2025-07-17T08:25:30.758Z"}
+{"level":"info","message":"Sending text to model API at http://localhost:5000/api/model/predict","timestamp":"2025-07-17T08:25:57.347Z"}
+{"level":"error","message":"Model API error: 404 Not Found","timestamp":"2025-07-17T08:25:57.356Z"}
+{"level":"info","message":"Sending text to model API at http://localhost:5000/api/model/predict","timestamp":"2025-07-17T08:34:14.884Z"}
+{"level":"error","message":"Model API error: 404 Not Found","timestamp":"2025-07-17T08:34:14.908Z"}
+{"level":"info","message":"Sending text to model API at http://localhost:5000/api/model/predict","timestamp":"2025-07-17T08:37:46.031Z"}
+{"level":"error","message":"Model API error: 404 Not Found","timestamp":"2025-07-17T08:37:46.040Z"}
+{"level":"info","message":"Sending text to model API at http://localhost:5000/api/model/predict","timestamp":"2025-07-17T08:37:46.672Z"}
+{"level":"error","message":"Model API error: 404 Not Found","timestamp":"2025-07-17T08:37:46.677Z"}
+{"level":"info","message":"Sending text to model API at http://localhost:5000/api/model/predict","timestamp":"2025-07-17T08:37:47.224Z"}
+{"level":"error","message":"Model API error: 404 Not Found","timestamp":"2025-07-17T08:37:47.231Z"}
+{"level":"info","message":"Sending text to model API at http://localhost:5000/api/model/predict","timestamp":"2025-07-17T08:37:47.855Z"}
+{"level":"error","message":"Model API error: 404 Not Found","timestamp":"2025-07-17T08:37:47.861Z"}
+{"level":"info","message":"Sending text to model API at http://localhost:5000/api/model/predict","timestamp":"2025-07-17T08:37:48.512Z"}
+{"level":"error","message":"Model API error: 404 Not Found","timestamp":"2025-07-17T08:37:48.516Z"}
+{"level":"info","message":"Sending text to model API at http://localhost:5000/api/model/predict","timestamp":"2025-07-17T08:39:33.114Z"}
+{"level":"error","message":"Model API error: 404 Not Found","timestamp":"2025-07-17T08:39:33.150Z"}
+{"level":"info","message":"Sending text to model API at http://localhost:5000/api/model/predict","timestamp":"2025-07-17T08:39:34.906Z"}
+{"level":"error","message":"Model API error: 404 Not Found","timestamp":"2025-07-17T08:39:34.913Z"}
+{"level":"info","message":"Sending text to model API at http://localhost:5000/api/model/predict","timestamp":"2025-07-17T08:39:36.032Z"}
+{"level":"error","message":"Model API error: 404 Not Found","timestamp":"2025-07-17T08:39:36.038Z"}
+{"level":"info","message":"Sending text to model API at http://localhost:5000/api/model/predict","timestamp":"2025-07-17T08:39:39.203Z"}
+{"level":"error","message":"Model API error: 404 Not Found","timestamp":"2025-07-17T08:39:39.209Z"}
+{"level":"info","message":"Sending text to model API at http://localhost:5000/api/model/predict","timestamp":"2025-07-17T08:39:39.824Z"}
+{"level":"error","message":"Model API error: 404 Not Found","timestamp":"2025-07-17T08:39:39.833Z"}
+{"level":"info","message":"Sending text to model API at http://localhost:5000/api/model/predict","timestamp":"2025-07-17T08:41:18.590Z"}
+{"level":"error","message":"Model API error: 404 Not Found","timestamp":"2025-07-17T08:41:18.615Z"}
+{"level":"info","message":"Sending text to model API at http://localhost:5000/api/model/predict","timestamp":"2025-07-17T08:49:14.515Z"}
+{"level":"error","message":"Model API error: 404 Not Found","timestamp":"2025-07-17T08:49:14.569Z"}
+{"level":"info","message":"Sending text to model API at http://localhost:5000/api/model/predict","timestamp":"2025-07-17T08:58:43.451Z"}
+{"level":"info","message":"Received prediction from model API","timestamp":"2025-07-17T08:58:43.506Z"}
+{"level":"info","message":"Sending text to model API at http://localhost:5000/api/model/predict","timestamp":"2025-07-17T08:59:57.262Z"}
+{"level":"info","message":"Received prediction from model API","timestamp":"2025-07-17T08:59:57.280Z"}
+{"level":"info","message":"Sending text to model API at http://localhost:5000/api/model/predict","timestamp":"2025-07-17T09:00:26.533Z"}
+{"level":"info","message":"Received prediction from model API","timestamp":"2025-07-17T09:00:26.546Z"}
+{"level":"info","message":"Sending text to model API at http://localhost:5000/api/model/predict","timestamp":"2025-07-17T09:00:57.852Z"}
+{"error":"Text input is required.","level":"error","message":"Model API error: 400 BAD REQUEST","timestamp":"2025-07-17T09:00:57.866Z"}
+{"level":"info","message":"Sending text to model API at http://localhost:5000/api/model/predict","timestamp":"2025-07-17T09:01:49.500Z"}
+{"level":"info","message":"Received prediction from model API","timestamp":"2025-07-17T09:01:49.516Z"}
+{"level":"info","message":"Sending text to model API at http://localhost:5000/api/model/predict","timestamp":"2025-07-17T10:57:02.834Z"}
+{"level":"info","message":"Received prediction from model API","timestamp":"2025-07-17T10:57:02.892Z"}
+{"level":"info","message":"Sending text to model API at http://localhost:5000/api/model/predict","timestamp":"2025-07-17T10:57:43.118Z"}
+{"level":"info","message":"Received prediction from model API","timestamp":"2025-07-17T10:57:43.135Z"}
+{"level":"info","message":"Server running on port 8000","timestamp":"2025-07-17T11:41:12.432Z"}
+{"level":"info","message":"MongoDB Connected...","timestamp":"2025-07-17T11:41:12.448Z"}
+{"level":"info","message":"Sending text to model API at http://localhost:5000/api/model/predict","timestamp":"2025-07-17T11:47:17.012Z"}
+{"level":"info","message":"Received prediction from model API","timestamp":"2025-07-17T11:47:17.049Z"}
+{"level":"info","message":"Analysis saved with ID: 6878e2c52e41225f5b2842a4","timestamp":"2025-07-17T11:47:17.082Z"}
+{"level":"info","message":"Feedback successfully submitted for analysis ID: 6878e2c52e41225f5b2842a4","timestamp":"2025-07-17T11:47:20.205Z"}
+{"level":"info","message":"Sending text to model API at http://localhost:5000/api/model/predict","timestamp":"2025-07-17T11:48:43.665Z"}
+{"level":"info","message":"Received prediction from model API","timestamp":"2025-07-17T11:48:43.677Z"}
+{"level":"info","message":"Analysis saved with ID: 6878e31b2e41225f5b2842a9","timestamp":"2025-07-17T11:48:43.687Z"}
+{"level":"info","message":"Feedback successfully submitted for analysis ID: 6878e31b2e41225f5b2842a9","timestamp":"2025-07-17T11:49:03.909Z"}
+{"level":"info","message":"Server running on port 8000","timestamp":"2025-07-17T12:04:02.372Z"}
+{"level":"info","message":"MongoDB Connected...","timestamp":"2025-07-17T12:04:02.387Z"}
+{"level":"info","message":"Feedback successfully submitted for analysis ID: 6878e31b2e41225f5b2842a9","timestamp":"2025-07-17T12:07:16.542Z"}
+{"level":"info","message":"Server running on port 8000","timestamp":"2025-07-17T12:21:32.099Z"}
+{"level":"info","message":"MongoDB Connected...","timestamp":"2025-07-17T12:21:32.113Z"}
+{"level":"info","message":"Server running on port 8000","timestamp":"2025-07-17T12:21:33.138Z"}
+{"level":"info","message":"MongoDB Connected...","timestamp":"2025-07-17T12:21:33.153Z"}
+{"level":"info","message":"Server running on port 8000","timestamp":"2025-07-17T12:22:04.206Z"}
+{"level":"info","message":"MongoDB Connected...","timestamp":"2025-07-17T12:22:04.221Z"}
+{"level":"info","message":"Server running on port 8000","timestamp":"2025-07-17T12:22:18.491Z"}
+{"level":"info","message":"MongoDB Connected...","timestamp":"2025-07-17T12:22:18.505Z"}
+{"level":"info","message":"Server running on port 8000","timestamp":"2025-07-17T12:23:08.690Z"}
+{"level":"info","message":"MongoDB Connected...","timestamp":"2025-07-17T12:23:08.708Z"}
+{"level":"info","message":"Server running on port 8000","timestamp":"2025-07-17T12:23:11.386Z"}
+{"level":"info","message":"MongoDB Connected...","timestamp":"2025-07-17T12:23:11.400Z"}
+{"level":"info","message":"Server running on port 8000","timestamp":"2025-07-17T12:31:00.944Z"}
+{"level":"info","message":"MongoDB Connected...","timestamp":"2025-07-17T12:31:00.958Z"}
+{"level":"info","message":"Fetching content from URL: https://www.reuters.com/world/europe/putin-says-russia-is-open-dialogue-ukraine-2024-05-24/","timestamp":"2025-07-17T12:34:36.241Z"}
+{"level":"error","message":"URL Analysis controller error:","timestamp":"2025-07-17T12:34:36.479Z"}
+{"level":"info","message":"Fetching content from URL: https://www.thehindu.com/news/cities/bangalore/karnataka-government-report-blames-rcb-dna-network-and-ksca-for-stampede-outside-chinnaswamy-stadium-in-bengaluru/article69822445.ece","timestamp":"2025-07-17T12:36:44.209Z"}
+{"level":"info","message":"Sending text to model API at http://localhost:5000/api/model/predict","timestamp":"2025-07-17T12:36:44.621Z"}
+{"level":"info","message":"Received prediction from model API","timestamp":"2025-07-17T12:36:44.695Z"}
+{"level":"info","message":"URL Analysis saved with ID: 6878ee5cd300c78b4982772e","timestamp":"2025-07-17T12:36:44.735Z"}
+{"level":"info","message":"Fetching content from URL: https://www.bbc.com/news/articles/cy890gpqw1po","timestamp":"2025-07-17T12:37:41.178Z"}
+{"level":"info","message":"Sending text to model API at http://localhost:5000/api/model/predict","timestamp":"2025-07-17T12:37:41.567Z"}
+{"level":"info","message":"Received prediction from model API","timestamp":"2025-07-17T12:37:41.584Z"}
+{"level":"info","message":"URL Analysis saved with ID: 6878ee95d300c78b49827730","timestamp":"2025-07-17T12:37:41.596Z"}
+{"level":"info","message":"Server running on port 8000","timestamp":"2025-07-17T12:43:27.469Z"}
+{"level":"info","message":"MongoDB Connected...","timestamp":"2025-07-17T12:43:27.489Z"}
+{"level":"info","message":"Server running on port 8000","timestamp":"2025-07-17T12:44:01.145Z"}
+{"level":"info","message":"MongoDB Connected...","timestamp":"2025-07-17T12:44:01.164Z"}
+{"level":"info","message":"Server running on port 8000","timestamp":"2025-07-17T12:44:04.085Z"}
+{"level":"info","message":"MongoDB Connected...","timestamp":"2025-07-17T12:44:04.102Z"}
+{"level":"info","message":"Server running on port 8000","timestamp":"2025-07-17T12:44:48.765Z"}
+{"level":"info","message":"MongoDB Connected...","timestamp":"2025-07-17T12:44:48.789Z"}
+{"level":"info","message":"Server running on port 8000","timestamp":"2025-07-17T12:44:54.208Z"}
+{"level":"info","message":"MongoDB Connected...","timestamp":"2025-07-17T12:44:54.222Z"}
+{"level":"info","message":"Server running on port 8000","timestamp":"2025-07-17T12:45:17.065Z"}
+{"level":"info","message":"MongoDB Connected...","timestamp":"2025-07-17T12:45:17.086Z"}
+{"level":"info","message":"Server running on port 8000","timestamp":"2025-07-17T12:45:19.803Z"}
+{"level":"info","message":"MongoDB Connected...","timestamp":"2025-07-17T12:45:19.819Z"}
+{"level":"info","message":"Server running on port 8000","timestamp":"2025-07-17T12:45:49.573Z"}
+{"level":"info","message":"MongoDB Connected...","timestamp":"2025-07-17T12:45:49.595Z"}
+{"level":"info","message":"Server running on port 8000","timestamp":"2025-07-17T12:45:53.254Z"}
+{"level":"info","message":"MongoDB Connected...","timestamp":"2025-07-17T12:45:53.274Z"}
+{"level":"info","message":"Server running on port 8000","timestamp":"2025-07-17T12:57:10.171Z"}
+{"level":"info","message":"MongoDB Connected...","timestamp":"2025-07-17T12:57:10.189Z"}
+{"level":"info","message":"Server running on port 8000","timestamp":"2025-07-17T13:21:04.629Z"}
+{"level":"info","message":"MongoDB Connected...","timestamp":"2025-07-17T13:21:04.653Z"}
+{"level":"info","message":"Sending text to model API at http://localhost:5000/api/model/predict","timestamp":"2025-07-17T13:32:28.504Z"}
+{"level":"info","message":"Received prediction from model API","timestamp":"2025-07-17T13:32:28.584Z"}
+{"level":"info","message":"URL Analysis by user atikur1043 saved with ID: 6878fb6c6e1be96e804a4a64","timestamp":"2025-07-17T13:32:28.600Z"}
+{"level":"info","message":"Sending text to model API at http://localhost:5000/api/model/predict","timestamp":"2025-07-17T13:32:51.834Z"}
+{"level":"info","message":"Received prediction from model API","timestamp":"2025-07-17T13:32:51.854Z"}
+{"level":"info","message":"URL Analysis by user atikur1043 saved with ID: 6878fb836e1be96e804a4a67","timestamp":"2025-07-17T13:32:51.863Z"}
+{"level":"error","message":"Login Error: Invalid username or password","stack":"Error: Invalid username or password\n    at loginUser (D:\\JU\\Projects\\fake-news-detector-2\\server\\controllers\\authController.js:62:13)","timestamp":"2025-07-17T13:33:16.739Z"}
+{"level":"error","message":"Login Error: Invalid username or password","stack":"Error: Invalid username or password\n    at loginUser (D:\\JU\\Projects\\fake-news-detector-2\\server\\controllers\\authController.js:62:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2025-07-17T13:33:36.634Z"}
+{"level":"error","message":"Login Error: Invalid username or password","stack":"Error: Invalid username or password\n    at loginUser (D:\\JU\\Projects\\fake-news-detector-2\\server\\controllers\\authController.js:62:13)","timestamp":"2025-07-17T13:35:01.333Z"}
+{"level":"error","message":"Login Error: Invalid username or password","stack":"Error: Invalid username or password\n    at loginUser (D:\\JU\\Projects\\fake-news-detector-2\\server\\controllers\\authController.js:62:13)","timestamp":"2025-07-17T13:35:06.472Z"}
+{"level":"info","message":"Feedback successfully submitted for analysis ID: 6878fb836e1be96e804a4a67","timestamp":"2025-07-17T13:35:38.660Z"}
+{"level":"info","message":"Server running on port 8000","timestamp":"2025-07-17T13:42:53.053Z"}
+{"level":"info","message":"MongoDB Connected...","timestamp":"2025-07-17T13:42:53.079Z"}
+{"level":"info","message":"Server running on port 8000","timestamp":"2025-07-17T13:43:29.586Z"}
+{"level":"info","message":"MongoDB Connected...","timestamp":"2025-07-17T13:43:29.610Z"}
+{"level":"error","message":"Signup Error: User already exists","stack":"Error: User already exists\n    at signupUser (D:\\JU\\Projects\\fake-news-detector-2\\server\\controllers\\authController.js:20:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2025-07-17T13:50:36.755Z"}
+{"level":"info","message":"Server running on port 8000","timestamp":"2025-07-17T14:06:15.734Z"}
+{"level":"info","message":"MongoDB Connected...","timestamp":"2025-07-17T14:06:15.775Z"}
+{"level":"info","message":"Server running on port 8000","timestamp":"2025-07-17T14:06:56.169Z"}
+{"level":"info","message":"MongoDB Connected...","timestamp":"2025-07-17T14:06:56.221Z"}
+{"level":"info","message":"Deleted feedback for user 6878fae06e1be96e804a4a5d","timestamp":"2025-07-17T14:09:01.630Z"}
+{"level":"info","message":"Deleted analyses for user 6878fae06e1be96e804a4a5d","timestamp":"2025-07-17T14:09:01.638Z"}
+{"level":"info","message":"Deleted user account 6878fae06e1be96e804a4a5d","timestamp":"2025-07-17T14:09:01.654Z"}
+{"level":"error","message":"Login Error: Invalid username or password","stack":"Error: Invalid username or password\n    at loginUser (D:\\JU\\Projects\\fake-news-detector-2\\server\\controllers\\authController.js:54:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2025-07-17T14:09:25.752Z"}
+{"level":"info","message":"Sending text to model API at http://localhost:5000/api/model/predict","timestamp":"2025-07-17T14:10:44.281Z"}
+{"level":"info","message":"Received prediction from model API","timestamp":"2025-07-17T14:10:44.312Z"}
+{"level":"info","message":"URL Analysis by user ayan1049 saved with ID: 68790464208d1bb0bfdbf400","timestamp":"2025-07-17T14:10:44.357Z"}
+{"level":"info","message":"Sending text to model API at http://localhost:5000/api/model/predict","timestamp":"2025-07-17T14:12:07.584Z"}
+{"level":"info","message":"Received prediction from model API","timestamp":"2025-07-17T14:12:07.612Z"}
+{"level":"info","message":"URL Analysis by user atikur1043 saved with ID: 687904b7208d1bb0bfdbf40f","timestamp":"2025-07-17T14:12:07.624Z"}
+{"level":"info","message":"Server running on port 8000","timestamp":"2025-07-17T16:05:05.041Z"}
+{"level":"info","message":"MongoDB Connected...","timestamp":"2025-07-17T16:05:05.060Z"}
+{"level":"info","message":"Deleted analyses for user 6878ffb6e7421c5312ba3dff","timestamp":"2025-07-17T16:06:56.141Z"}
+{"level":"info","message":"Deleted user account 6878ffb6e7421c5312ba3dff","timestamp":"2025-07-17T16:06:56.145Z"}
+{"level":"info","message":"Deleted analyses for user 687904a2208d1bb0bfdbf408","timestamp":"2025-07-17T16:07:56.042Z"}
+{"level":"info","message":"Deleted user account 687904a2208d1bb0bfdbf408","timestamp":"2025-07-17T16:07:56.045Z"}
+{"level":"error","message":"Login Error: Invalid username or password","stack":"Error: Invalid username or password\n    at loginUser (D:\\JU\\Projects\\fake-news-detector-2\\server\\controllers\\authController.js:54:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2025-07-17T16:08:15.467Z"}
+{"level":"info","message":"Sending text to model API at http://localhost:5000/api/model/predict","timestamp":"2025-07-17T16:08:47.145Z"}
+{"level":"info","message":"Received prediction from model API","timestamp":"2025-07-17T16:08:47.160Z"}
+{"level":"info","message":"URL Analysis by user atikur1043 saved with ID: 6879200f45b5e7cf2dae3d47","timestamp":"2025-07-17T16:08:47.167Z"}
+{"level":"info","message":"Feedback successfully submitted for analysis ID: 6879200f45b5e7cf2dae3d47","timestamp":"2025-07-17T16:09:03.541Z"}
+{"level":"info","message":"Server running on port 8000","timestamp":"2025-07-17T16:47:26.479Z"}
+{"level":"info","message":"MongoDB Connected...","timestamp":"2025-07-17T16:47:28.693Z"}
+{"_message":"User validation failed","errors":{"password":{"kind":"minlength","message":"Path `password` (`1234`) is shorter than the minimum allowed length (6).","name":"ValidatorError","path":"password","properties":{"message":"Path `password` (`1234`) is shorter than the minimum allowed length (6).","minlength":6,"path":"password","type":"minlength","value":"1234"},"value":"1234"}},"level":"error","message":"Signup Error: User validation failed: password: Path `password` (`1234`) is shorter than the minimum allowed length (6).","stack":"ValidationError: User validation failed: password: Path `password` (`1234`) is shorter than the minimum allowed length (6).\n    at Document.invalidate (D:\\JU\\Projects\\fake-news-detector-2\\server\\node_modules\\mongoose\\lib\\document.js:3352:32)\n    at D:\\JU\\Projects\\fake-news-detector-2\\server\\node_modules\\mongoose\\lib\\document.js:3113:17\n    at D:\\JU\\Projects\\fake-news-detector-2\\server\\node_modules\\mongoose\\lib\\schemaType.js:1410:9\n    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)","timestamp":"2025-07-17T16:48:56.794Z"}
+{"level":"info","message":"Sending text to model API at http://localhost:5000/api/model/predict","timestamp":"2025-07-17T16:51:00.546Z"}
+{"level":"info","message":"Received prediction from model API","timestamp":"2025-07-17T16:51:00.577Z"}
+{"level":"info","message":"URL Analysis by user testuser123 saved with ID: 687929f45cb0fbc61a586cfb","timestamp":"2025-07-17T16:51:00.638Z"}
+{"level":"info","message":"Deleted feedback for user 687929965cb0fbc61a586cf4","timestamp":"2025-07-17T16:53:43.722Z"}
+{"level":"info","message":"Deleted analyses for user 687929965cb0fbc61a586cf4","timestamp":"2025-07-17T16:53:43.763Z"}
+{"level":"info","message":"Deleted user account 687929965cb0fbc61a586cf4","timestamp":"2025-07-17T16:53:43.817Z"}

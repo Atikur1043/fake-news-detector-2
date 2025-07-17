@@ -1,0 +1,30 @@
+{"level":"error","message":"Model API error:","timestamp":"2025-07-17T08:15:19.032Z"}
+{"level":"error","message":"Model API error:","timestamp":"2025-07-17T08:15:21.013Z"}
+{"level":"error","message":"Model API error:","timestamp":"2025-07-17T08:15:26.249Z"}
+{"level":"error","message":"Model API error:","timestamp":"2025-07-17T08:15:27.241Z"}
+{"level":"error","message":"Model API error: 404 Not Found","timestamp":"2025-07-17T08:25:30.008Z"}
+{"level":"error","message":"Model API error: 404 Not Found","timestamp":"2025-07-17T08:25:30.758Z"}
+{"level":"error","message":"Model API error: 404 Not Found","timestamp":"2025-07-17T08:25:57.356Z"}
+{"level":"error","message":"Model API error: 404 Not Found","timestamp":"2025-07-17T08:34:14.908Z"}
+{"level":"error","message":"Model API error: 404 Not Found","timestamp":"2025-07-17T08:37:46.040Z"}
+{"level":"error","message":"Model API error: 404 Not Found","timestamp":"2025-07-17T08:37:46.677Z"}
+{"level":"error","message":"Model API error: 404 Not Found","timestamp":"2025-07-17T08:37:47.231Z"}
+{"level":"error","message":"Model API error: 404 Not Found","timestamp":"2025-07-17T08:37:47.861Z"}
+{"level":"error","message":"Model API error: 404 Not Found","timestamp":"2025-07-17T08:37:48.516Z"}
+{"level":"error","message":"Model API error: 404 Not Found","timestamp":"2025-07-17T08:39:33.150Z"}
+{"level":"error","message":"Model API error: 404 Not Found","timestamp":"2025-07-17T08:39:34.913Z"}
+{"level":"error","message":"Model API error: 404 Not Found","timestamp":"2025-07-17T08:39:36.038Z"}
+{"level":"error","message":"Model API error: 404 Not Found","timestamp":"2025-07-17T08:39:39.209Z"}
+{"level":"error","message":"Model API error: 404 Not Found","timestamp":"2025-07-17T08:39:39.833Z"}
+{"level":"error","message":"Model API error: 404 Not Found","timestamp":"2025-07-17T08:41:18.615Z"}
+{"level":"error","message":"Model API error: 404 Not Found","timestamp":"2025-07-17T08:49:14.569Z"}
+{"error":"Text input is required.","level":"error","message":"Model API error: 400 BAD REQUEST","timestamp":"2025-07-17T09:00:57.866Z"}
+{"level":"error","message":"URL Analysis controller error:","timestamp":"2025-07-17T12:34:36.479Z"}
+{"level":"error","message":"Login Error: Invalid username or password","stack":"Error: Invalid username or password\n    at loginUser (D:\\JU\\Projects\\fake-news-detector-2\\server\\controllers\\authController.js:62:13)","timestamp":"2025-07-17T13:33:16.739Z"}
+{"level":"error","message":"Login Error: Invalid username or password","stack":"Error: Invalid username or password\n    at loginUser (D:\\JU\\Projects\\fake-news-detector-2\\server\\controllers\\authController.js:62:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2025-07-17T13:33:36.634Z"}
+{"level":"error","message":"Login Error: Invalid username or password","stack":"Error: Invalid username or password\n    at loginUser (D:\\JU\\Projects\\fake-news-detector-2\\server\\controllers\\authController.js:62:13)","timestamp":"2025-07-17T13:35:01.333Z"}
+{"level":"error","message":"Login Error: Invalid username or password","stack":"Error: Invalid username or password\n    at loginUser (D:\\JU\\Projects\\fake-news-detector-2\\server\\controllers\\authController.js:62:13)","timestamp":"2025-07-17T13:35:06.472Z"}
+{"level":"error","message":"Signup Error: User already exists","stack":"Error: User already exists\n    at signupUser (D:\\JU\\Projects\\fake-news-detector-2\\server\\controllers\\authController.js:20:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2025-07-17T13:50:36.755Z"}
+{"level":"error","message":"Login Error: Invalid username or password","stack":"Error: Invalid username or password\n    at loginUser (D:\\JU\\Projects\\fake-news-detector-2\\server\\controllers\\authController.js:54:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2025-07-17T14:09:25.752Z"}
+{"level":"error","message":"Login Error: Invalid username or password","stack":"Error: Invalid username or password\n    at loginUser (D:\\JU\\Projects\\fake-news-detector-2\\server\\controllers\\authController.js:54:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2025-07-17T16:08:15.467Z"}
+{"_message":"User validation failed","errors":{"password":{"kind":"minlength","message":"Path `password` (`1234`) is shorter than the minimum allowed length (6).","name":"ValidatorError","path":"password","properties":{"message":"Path `password` (`1234`) is shorter than the minimum allowed length (6).","minlength":6,"path":"password","type":"minlength","value":"1234"},"value":"1234"}},"level":"error","message":"Signup Error: User validation failed: password: Path `password` (`1234`) is shorter than the minimum allowed length (6).","stack":"ValidationError: User validation failed: password: Path `password` (`1234`) is shorter than the minimum allowed length (6).\n    at Document.invalidate (D:\\JU\\Projects\\fake-news-detector-2\\server\\node_modules\\mongoose\\lib\\document.js:3352:32)\n    at D:\\JU\\Projects\\fake-news-detector-2\\server\\node_modules\\mongoose\\lib\\document.js:3113:17\n    at D:\\JU\\Projects\\fake-news-detector-2\\server\\node_modules\\mongoose\\lib\\schemaType.js:1410:9\n    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)","timestamp":"2025-07-17T16:48:56.794Z"}
