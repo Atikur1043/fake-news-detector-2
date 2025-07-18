@@ -1,6 +1,6 @@
 # **Prometheus \- AI Fake News Detector**
 
-**Live Demo:** [https://prometheus-3t0i.onrender.com](https://www.google.com/search?q=https://prometheus-frontend.onrender.com)
+**Live Demo:** [https://prometheus-3t0i.onrender.com](https://www.google.com/search?q=https://prometheus-3t0i.onrender.com)
 
 Prometheus is a full-stack web application designed to combat misinformation by providing users with a powerful tool to assess the credibility of news articles. By pasting text directly or providing a URL, users can leverage a custom-trained Machine Learning model to receive a real-time prediction on whether an article is likely real or fake.
 
@@ -52,7 +52,7 @@ To run this project on your local machine, follow these steps:
 
 ### **1\. Clone the Repository**
 
-git clone \[https://github.com/Atikur1043/fake-news-detector-2.git\](https://github.com/Atikur1043/fake-news-detector-2.git)  
+git clone \[https://github.com/Atikur1043/fake-news-detector-2.git] (https://github.com/Atikur1043/fake-news-detector-2.git)  
 cd fake-news-detector-2
 
 ### **2\. Backend Setup**
