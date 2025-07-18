@@ -1,7 +1,10 @@
 import React, { createContext, useState, useEffect } from 'react';
+import axios from 'axios';
 
-// NOTE: We no longer need to import axios.
 const AuthContext = createContext();
+
+// The base URL for your API will be read from the environment variable
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000';
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
@@ -15,36 +18,16 @@ export const AuthProvider = ({ children }) => {
     setLoading(false);
   }, []);
 
-  const handleAuthResponse = async (response) => {
-    if (!response.ok) {
-      const errorData = await response.json();
-      throw new Error(errorData.message || `HTTP error! status: ${response.status}`);
-    }
-    const data = await response.json();
+  const signup = async (username, password) => {
+    const { data } = await axios.post(`${API_URL}/api/auth/signup`, { username, password });
     localStorage.setItem('userInfo', JSON.stringify(data));
     setUser(data);
   };
 
-  const signup = async (username, password) => {
-    const response = await fetch('/api/auth/signup', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ username, password }),
-    });
-    await handleAuthResponse(response);
-  };
-
   const login = async (username, password) => {
-    const response = await fetch('/api/auth/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ username, password }),
-    });
-    await handleAuthResponse(response);
+    const { data } = await axios.post(`${API_URL}/api/auth/login`, { username, password });
+    localStorage.setItem('userInfo', JSON.stringify(data));
+    setUser(data);
   };
 
   const logout = () => {
@@ -56,16 +39,12 @@ export const AuthProvider = ({ children }) => {
     if (!user || !user.token) {
       throw new Error('Not authenticated');
     }
-    const response = await fetch('/api/auth/profile', {
-      method: 'DELETE',
+    const config = {
       headers: {
-        'Authorization': `Bearer ${user.token}`,
-      }
-    });
-    if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.message || `HTTP error! status: ${response.status}`);
-    }
+        Authorization: `Bearer ${user.token}`,
+      },
+    };
+    await axios.delete(`${API_URL}/api/auth/profile`, config);
     logout();
   };
 
