@@ -3,7 +3,6 @@ import axios from 'axios';
 import FeedbackButton from './FeedbackButton';
 import AuthContext from '../context/AuthContext';
 
-// Define the API_URL based on the environment variable
 const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000';
 
 export default function NewsInputForm({ onAnalysis, analysis }) {
@@ -57,7 +56,6 @@ export default function NewsInputForm({ onAnalysis, analysis }) {
     resetState();
     try {
       const config = getAuthConfig();
-      // Use the API_URL prefix for the request
       const response = await axios.post(`${API_URL}/api/analyze`, { text }, config);
       handleApiResponse(response);
     } catch (err) {
@@ -73,7 +71,6 @@ export default function NewsInputForm({ onAnalysis, analysis }) {
     resetState();
     try {
       const config = getAuthConfig();
-      // Use the API_URL prefix for the request
       const response = await axios.post(`${API_URL}/api/analyze-url`, { url }, config);
       handleApiResponse(response);
     } catch (err) {
@@ -89,7 +86,6 @@ export default function NewsInputForm({ onAnalysis, analysis }) {
     if (!result || !result._id) return;
     try {
       const config = getAuthConfig();
-      // Use the API_URL prefix for the request
       await axios.post(`${API_URL}/api/feedback`, {
         analysisId: result._id,
         isCorrect: false,

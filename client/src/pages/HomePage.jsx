@@ -4,7 +4,6 @@ import NewsInputForm from '../components/NewsInputForm';
 import HistoryList from '../components/HistoryList';
 import AuthContext from '../context/AuthContext';
 
-// Define the API_URL based on the environment variable
 const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000';
 
 export default function HomePage() {
@@ -24,7 +23,6 @@ export default function HomePage() {
             Authorization: `Bearer ${user.token}`,
           },
         };
-        // Use the API_URL prefix for the request
         const { data } = await axios.get(`${API_URL}/api/history`, config);
         setHistory(data);
       } catch (error) {

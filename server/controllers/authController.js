@@ -1,7 +1,7 @@
 const connectDB = require('../config/db');
 const User = require('../models/User');
-const Analysis = require('../models/Analysis'); // Import Analysis model
-const Feedback = require('../models/Feedback'); // Import Feedback model
+const Analysis = require('../models/Analysis');
+const Feedback = require('../models/Feedback');
 const jwt = require('jsonwebtoken');
 const logger = require('../utils/logger');
 
@@ -62,27 +62,21 @@ const loginUser = async (req, res, next) => {
   }
 };
 
-// @desc    Delete user account and all associated data
-// @route   DELETE /api/auth/profile
 const deleteUser = async (req, res, next) => {
   try {
     const userId = req.user._id;
 
-    // 1. Find all analyses by the user
     const analyses = await Analysis.find({ user: userId });
     const analysisIds = analyses.map(a => a._id);
 
-    // 2. Delete all feedback associated with those analyses
     if (analysisIds.length > 0) {
       await Feedback.deleteMany({ analysisId: { $in: analysisIds } });
       logger.info(`Deleted feedback for user ${userId}`);
     }
 
-    // 3. Delete all analyses by the user
     await Analysis.deleteMany({ user: userId });
     logger.info(`Deleted analyses for user ${userId}`);
     
-    // 4. Delete the user account itself
     await User.findByIdAndDelete(userId);
     logger.info(`Deleted user account ${userId}`);
 

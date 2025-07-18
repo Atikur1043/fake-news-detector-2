@@ -6,7 +6,6 @@ import os
 app = Flask(__name__)
 CORS(app)
 
-# --- Load Locally Trained Model ---
 try:
     model = joblib.load('model.joblib')
     vectorizer = joblib.load('vectorizer.joblib')

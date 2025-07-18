@@ -10,8 +10,6 @@ export default function HistoryList({ history, onSelect, isLoading }) {
     );
   }
 
-  // FIX: Check if history is an array before trying to map over it.
-  // This prevents the "t.map is not a function" crash.
   const hasHistory = Array.isArray(history) && history.length > 0;
 
   return (

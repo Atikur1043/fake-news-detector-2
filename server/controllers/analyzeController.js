@@ -13,12 +13,11 @@ const analyzeText = async (req, res, next) => {
 
     const { prediction, confidence } = await predictFakeNews(text);
 
-    // Create the analysis record and associate it with the logged-in user
     const newAnalysis = new Analysis({
       text,
       prediction,
       confidence,
-      user: req.user._id, // Get user ID from the request object
+      user: req.user._id,
     });
     await newAnalysis.save();
     

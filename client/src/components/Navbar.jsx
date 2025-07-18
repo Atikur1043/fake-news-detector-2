@@ -12,10 +12,8 @@ export default function Navbar({ darkMode, onToggle }) {
     setIsDeleting(true);
     try {
       await deleteAccount();
-      // No need to navigate, logout will trigger re-render
     } catch (error) {
       console.error("Failed to delete account", error);
-      // Optionally show an error message to the user
     } finally {
       setIsDeleting(false);
       setIsModalOpen(false);

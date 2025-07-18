@@ -14,7 +14,7 @@ export default function LoginPage() {
     setError('');
     try {
       await login(username, password);
-      navigate('/'); // Redirect to home page on successful login
+      navigate('/');
     } catch (err) {
       setError(err.response?.data?.message || 'Failed to log in. Please check your credentials.');
     }

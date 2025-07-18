@@ -18,7 +18,7 @@ export default function SignupPage() {
     setError('');
     try {
       await signup(username, password);
-      navigate('/'); // Redirect to home page on successful signup
+      navigate('/');
     } catch (err) {
       setError(err.response?.data?.message || 'Failed to sign up. Please try another username.');
     }

@@ -37,7 +37,7 @@ const analyzeUrl = async (req, res, next) => {
       text: extractedText,
       prediction,
       confidence,
-      user: req.user._id, // Associate with the logged-in user
+      user: req.user._id,
     });
     await newAnalysis.save();
     

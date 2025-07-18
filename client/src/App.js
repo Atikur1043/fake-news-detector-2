@@ -6,11 +6,8 @@ import AboutPage from './pages/AboutPage.jsx';
 import LoginPage from './pages/LoginPage.jsx';
 import SignupPage from './pages/SignupPage.jsx';
 import PrivateRoute from './components/PrivateRoute.jsx';
-import { SpeedInsights } from "@vercel/speed-insights/react";
-// We no longer need to import useContext here as 'user' is not used.
 
 function App() {
-  // The unused 'user' variable has been removed.
   const [darkMode, setDarkMode] = useState(() => {
     const theme = localStorage.getItem('theme');
     return theme === 'dark';
@@ -37,7 +34,6 @@ function App() {
             {/* You can add other private routes here in the future */}
           </Route>
         </Routes>
-        <SpeedInsights />
       </main>
     </div>
   );

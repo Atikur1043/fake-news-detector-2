@@ -3,7 +3,6 @@ import axios from 'axios';
 
 const AuthContext = createContext();
 
-// The base URL for your API will be read from the environment variable
 const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000';
 
 export const AuthProvider = ({ children }) => {

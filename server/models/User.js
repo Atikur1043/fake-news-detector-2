@@ -2,13 +2,11 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 
 const userSchema = new mongoose.Schema({
-  // This field will store the original, case-sensitive username for display
   displayName: {
     type: String,
     required: true,
     trim: true,
   },
-  // This field will store the lowercase version for login and uniqueness
   username: {
     type: String,
     required: true,
@@ -23,7 +21,6 @@ const userSchema = new mongoose.Schema({
   },
 }, { timestamps: true });
 
-// Hash password before saving
 userSchema.pre('save', async function (next) {
   if (!this.isModified('password')) {
     return next();
@@ -33,7 +30,6 @@ userSchema.pre('save', async function (next) {
   next();
 });
 
-// Method to compare passwords
 userSchema.methods.matchPassword = async function (enteredPassword) {
   return await bcrypt.compare(enteredPassword, this.password);
 };
