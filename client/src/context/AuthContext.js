@@ -1,6 +1,6 @@
 import React, { createContext, useState, useEffect } from 'react';
-import axios from 'axios';
 
+// NOTE: We no longer need to import axios.
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
@@ -15,18 +15,36 @@ export const AuthProvider = ({ children }) => {
     setLoading(false);
   }, []);
 
-  const signup = async (username, password) => {
-    // FIX: Use relative path for API call
-    const { data } = await axios.post('/api/auth/signup', { username, password });
+  const handleAuthResponse = async (response) => {
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.message || `HTTP error! status: ${response.status}`);
+    }
+    const data = await response.json();
     localStorage.setItem('userInfo', JSON.stringify(data));
     setUser(data);
   };
 
+  const signup = async (username, password) => {
+    const response = await fetch('/api/auth/signup', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ username, password }),
+    });
+    await handleAuthResponse(response);
+  };
+
   const login = async (username, password) => {
-    // FIX: Use relative path for API call
-    const { data } = await axios.post('/api/auth/login', { username, password });
-    localStorage.setItem('userInfo', JSON.stringify(data));
-    setUser(data);
+    const response = await fetch('/api/auth/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ username, password }),
+    });
+    await handleAuthResponse(response);
   };
 
   const logout = () => {
@@ -38,13 +56,16 @@ export const AuthProvider = ({ children }) => {
     if (!user || !user.token) {
       throw new Error('Not authenticated');
     }
-    const config = {
+    const response = await fetch('/api/auth/profile', {
+      method: 'DELETE',
       headers: {
-        Authorization: `Bearer ${user.token}`,
-      },
-    };
-    // FIX: Use relative path for API call
-    await axios.delete('/api/auth/profile', config);
+        'Authorization': `Bearer ${user.token}`,
+      }
+    });
+    if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || `HTTP error! status: ${response.status}`);
+    }
     logout();
   };
 
