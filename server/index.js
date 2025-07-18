@@ -24,9 +24,7 @@ app.use('/api/history', require('./routes/history'));
 // Centralized Error Handler
 app.use(errorHandler);
 
-// FIX: Remove the app.listen() block.
-// Vercel handles the server listening part automatically.
+// NOTE: The app.listen() block has been removed for Vercel compatibility.
 
 // Export the app for Vercel's serverless environment
-const serverless = require('serverless-http');
-module.exports = serverless(app);
+module.exports = app;
